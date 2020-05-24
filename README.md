@@ -1,6 +1,4 @@
-<p align="center">
- <h1 align="center">JavaScript Dependency Injector<h1>
-</p>
+<p align="center"><h1 align="center">JavaScript Dependency Injector</h1></p>
 
 ## Features
 
