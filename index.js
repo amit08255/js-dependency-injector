@@ -1,8 +1,8 @@
 const inject = require('./inject');
-const ContainerClass = require('./container');
+const Container = require('./container');
 
 module.exports = {
-    Container: ContainerClass.Container,
+    Container: Container,
     createDecorator: inject.createDecorator,
     createWire: inject.createWire,
     createResolve: inject.createResolve,

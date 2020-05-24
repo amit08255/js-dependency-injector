@@ -157,4 +157,4 @@ class Container {
     }
 }
 
-module.exports.Container = Container;
+module.exports = Container;

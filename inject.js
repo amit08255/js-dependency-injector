@@ -27,19 +27,6 @@ function define(target, property, container, type, args) {
     });
 }
 
-/**
- * 
- * @param {Symbol} type 
- * @param {Container} container 
- * @param {Array<Symbol>} args 
- * @returns {(target:object, property:string)}
- */
-function inject(type, container, args) {
-    
-    return (target, property) => {
-        define(target, property, container, type, args);
-    };
-}
 
 /**
  * Wire up dependent to the dependency. 
@@ -74,7 +61,6 @@ function createResolve(container) {
 
 module.exports = {
     NOCACHE: NOCACHE,
-    createDecorator: createDecorator,
     createWire: createWire,
     createResolve: createResolve
 }
