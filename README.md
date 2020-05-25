@@ -9,7 +9,6 @@
 * Can bind dependencies as **classes**, **factories** and **static values**
 * Supports binding in **singleton scope**
 * **Cached** - Resolves only once in each dependent class by default
-* **Cache can switched off** directly at the inject decorator
 * Made with **unit testing** in mind
 * Supports dependency **rebinding** and container **snapshots** and **restores**
 * **Lightweight** - Just around **750 Byte gzip** and **650 Byte brotli** compressed
@@ -19,8 +18,7 @@
 
 ### Creating a container
 
-The container is the place where all dependencies get bound to. It is possible to have
-multiple container in our project in parallel.
+The container is the place where all dependencies get bound to. It is possible to have multiple container in our project in parallel. Best practice is to create a main AppContainer and inside that container create child containers of dependencies to categorize them easily. Then to inject dependencies you just have to share the main AppContainer to app modules.
 
 ```js
 import {Container} from "./container";
@@ -176,7 +174,7 @@ function Example() {
 }
 ```
 
-> Notice: We access the dependency trough a function.
+> Notice: We access the dependency through a function.
 > The dependency is not assigned directly to the property/constant.
 > If we want direct access we can use `container.get()` but we should avoid
 > using `get()` inside of classes because we then loose the lazy dependency
